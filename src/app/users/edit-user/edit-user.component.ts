@@ -42,8 +42,7 @@ export class EditUserComponent implements OnInit {
 
   getUserById(id: any) {
     this.contactoService.getContactoById(id).subscribe((data: any) => {
-      this._id = data._id;
-      console.log(data)
+      this._id = data._id;      
       this.register.patchValue({
         user: data.user._id,
         contacto: data.contacto,

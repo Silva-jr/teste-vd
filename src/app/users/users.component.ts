@@ -27,18 +27,25 @@ export class UsersComponent implements OnInit {
   dataContacto: Contacto[] = [];
   dataUser: any[];
   currentUser: UserAuth = new UserAuth();
-
+  name: any;
   isLoadingResults = true;
+  
+  register: FormGroup;    
+  bloqueio = '';
 
   constructor(
     public dialog: MatDialog,
     private contactoService: ContactoService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private formBuilder: FormBuilder
   ) {
     this.currentUser = loginService.decodeTokne();
   }
 
   ngOnInit(): void {
+       this.register = this.formBuilder.group({     
+      bloqueio: [true, Validators.required],
+    });
     this.getContacto();
   }
 
@@ -96,11 +103,33 @@ export class UsersComponent implements OnInit {
     this.contactoService.getContacto().subscribe(
       (data: any) => {
         this.dataContacto = data;
-        console.log(this.dataUser);
+        console.log(this.dataContacto);
       },
       (err: any) => {
         console.log(err);
       }
     );
+  }
+
+  bloquear(id: string) {
+    this.contactoService.updateContacto(id, this.register.value).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.getContacto();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  search() {
+    if (this.name == '') {
+      this.getContacto();
+    } else {
+      this.dataContacto = this.dataContacto.filter((res) => {
+        return res.user.nome.toLowerCase().match(this.name.toLowerCase());
+      });
+    }
   }
 }

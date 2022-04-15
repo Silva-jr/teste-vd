@@ -9,7 +9,7 @@ const httpOptions = {
 };
 
 const apiUrl = 'https://contacto-nestjs.herokuapp.com';
-
+//const apiUrl = 'http://localhost:3000'
 @Injectable({
   providedIn: 'root',
 })
@@ -51,8 +51,7 @@ export class ContactoService {
 
   getContacto(): Observable<any[]> {
     return this.http.get<any[]>(`${apiUrl}/contacto`).pipe(
-      tap(() => {
-        console.log('sucesso');
+      tap(() => {        
       }),
       catchError(this.handleError('getContacto', []))
     );

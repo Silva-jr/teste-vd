@@ -10,8 +10,7 @@ import { LoginService } from 'src/app/users/service/login.service';
 export class SidebarComponent implements OnInit {
   currentUser: UserAuth = new UserAuth();
   constructor(private loginService: LoginService) {
-    this.currentUser = loginService.decodeTokne();
-    console.log(this.currentUser)
+    this.currentUser = loginService.decodeTokne();    
   }
 
   ngOnInit(): void {}

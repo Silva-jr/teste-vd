@@ -8,6 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 const apiUrl = 'https://contacto-nestjs.herokuapp.com/auth';
+//const apiUrl = 'http://localhost:3000/auth'
 @Injectable({
   providedIn: 'root',
 })

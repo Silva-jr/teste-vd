@@ -20,8 +20,7 @@ export class AddContactoComponent implements OnInit {
     private contactoService: ContactoService,
     private formBuilder: FormBuilder
   ) {
-    this.id = data.id;
-    console.log(this.id)
+    this.id = data.id;    
   }
 
   onNoClick(): void {

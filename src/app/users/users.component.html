@@ -14,9 +14,9 @@
   <div class="table-container-head">
     <form action="#">
       <div class="input-box">
-        <input type="text">
+        <input type="text" name="search" id="search" [(ngModel)]="name" (ngModelChange)="search()">
         <button type="submit">
-          <i class='bx bx-search'></i>
+          <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
     </form>
@@ -62,11 +62,11 @@
               </span>
               Editar
             </button>
-            <button class="card-menu-button" mat-menu-item>
+            <button class="card-menu-button" mat-menu-item (click)="bloquear(item._id)">
               <span>
                 <i class="fa fa-trash-o" aria-hidden="true"> </i>
               </span>
-              Apagar
+              Bloquear
             </button>
           </mat-menu>
         </td>

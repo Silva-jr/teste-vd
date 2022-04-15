@@ -7,7 +7,7 @@ import { UserAuth } from 'src/app/security/models/userAuth';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
-const apiUrl = '//localhost:3000/auth';
+const apiUrl = 'https://contacto-nestjs.herokuapp.com/auth';
 @Injectable({
   providedIn: 'root',
 })

@@ -42,7 +42,7 @@ export class AddContactoComponent implements OnInit {
     this.contactoService.addContacto(this.register.value).subscribe(
       (res: any) => {
         const message = 'Contacto adiconado com sucesso';
-        console.log(message)
+        this.onNoClick();
       },
       (err: any) => {
         console.log(err);

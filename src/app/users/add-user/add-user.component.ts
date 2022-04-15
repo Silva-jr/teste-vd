@@ -35,7 +35,7 @@ export class AddUserComponent implements OnInit {
     this.contactoService.addUserContacto(this.register.value).subscribe(
       (res: any) => {
         const message = 'User adiconado com sucesso';
-        console.log(message)
+        this.onNoClick();
       },
       (err: any) => {
         console.log(err);

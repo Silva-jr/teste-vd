@@ -1,0 +1,28 @@
+<section class="login-content">
+    <div class="login-content-form">
+        <div class="logo">
+
+        </div>
+        <div class="title">
+            <h2>Login</h2>
+        </div>
+        <form class="form2" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <div class="form-control">
+                <label for="email"> <strong>Email</strong> </label>
+                <input type="email" placeholder="email@example.com" formControlName="email">
+            </div>
+            <div class="form-control">
+                <label for="senha">Senha</label>
+                <input type="password" placeholder="Entre com uma senha" formControlName="password">
+            </div>
+            <div class="btn-enviar">
+                <button>
+                    Entrar
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="background1">
+        <img src="../../../assets/img/image.jpg" alt="">
+    </div>
+</section>

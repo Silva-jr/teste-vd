@@ -1,0 +1,69 @@
+<div class="app-content-header">
+  <span class="app-content-header-toggle-menu toggle-menu" (click)="switchSidebar()">
+    <i class='bx bx-menu-alt-left'></i>
+  </span>
+
+  <div class="app-content-header-user-container">
+    <button class="mode-switch" title="Switch Theme">
+     
+    </button>
+    <div class="notification notification-item">
+      <a class="user-item toggle-notification">
+        <span class="icon">
+          <i class='bx bx-bell'></i>
+        </span>
+        <div class="notification-number">
+          2
+        </div>
+      </a>
+      <div class="notification-card">
+        <div class="card-top">
+          Notificações
+        </div>
+        <div class="card-item" >
+          <div class="checked">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          </div>
+          <div class="task-info">
+            <span class="description">
+              
+            </span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>Ver todas actividades</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="user-menu">
+      <a (click)="menuToggle()" class="user-perfil toggle-menu-user">
+        <img src="../../../assets/img/avatar2.jpg" alt="Beans Avatar">
+      </a>
+      <div class="menu-user">
+        <h3>
+          Conta de usuário
+          <div>
+          </div>
+        </h3>
+        <ul>
+          <li>
+            <span class="material-icons icons-size">person</span>
+            <a [routerLink]="['../../perfil-usuario']">Meu Perfil</a>
+          </li>
+          <li (click)="logout()" class="exit">
+            <span class="material-icons icons-size">
+              power_settings_new
+            </span>
+            <a>Sair do Sistema</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div href="#" class="user-info">
+    </div>
+  </div>
+
+</div>

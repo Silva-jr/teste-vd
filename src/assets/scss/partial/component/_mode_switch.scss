@@ -1,0 +1,19 @@
+.mode-switch {
+  background-color: transparent;
+  border          : none;
+  padding         : 0;
+  color           : var(--toggle-switch-color);
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  margin-right    : 0;
+  cursor          : pointer;
+
+  .moon {
+    fill: none;
+  }
+}
+
+.mode-switch.active .moon {
+  fill: var(--toggle-switch-color);
+}

@@ -1,0 +1,151 @@
+:root {
+  --primary-color: #1c212d;
+  --primary-dark-color: #161a24;
+  --primary-hover-color: #202635;
+  --end-week-day-color: #ff0000;
+  --delete-button-color: rgb(230, 52, 52);
+
+  --secondary-color: #34dba1;
+  --hover-icon-color: #00ffa6;
+
+  --secondary-dark-color: #23976f;
+  --secondary-hover-color: #d2fff0;
+
+  --background-color: #f9f9f9;
+
+  --primary-text-color: #616468;
+  --secondary-text-color: #bec1cc;
+
+  --perfil-text-color: #434750;
+  --perfil-secundary-text-color: #a9abb4;
+
+  --button-info-color: #202635;
+
+  --button-cancel-color-hover: #92979c;
+  --button-cancel-color: #2a2a2e;
+
+  --button-send-color: #28bd89;
+
+  --header-color: #fff;
+
+  --toggle-switch-color: #434750;
+
+  --notification-rounded-container: #d2fff0;
+
+  --border-input-color: #dee2e6;
+
+  --white-color: #fff;
+  --black-color: #000;
+  --footer-background-color: #fff;
+  --footer-text-color: #000;
+
+  --form-container-color: #fff;
+
+  --background-input-color: #fff;
+
+  --input-text-color: #fff;
+  --input-login-text-color: #161a24;
+
+  --grey500: #71717a;
+
+  --card-text-color: #748499;
+
+  --border-table-color: #dee2e6;
+
+  --icon-search-color: #000;
+
+  --table-head-color: #f6f8fb;
+
+  --table-text-color: #748499;
+
+  --feed-color: #d2fff0;
+  --feed-text-color: #616468;
+
+  --document-img: #f4f6fc;
+
+  --anchor-text-color: #3a65ff;
+
+  --anchor-text-color-hover: #2642a9;
+
+  --background-color-menu-user: #212127;
+  --text-color-menu-user: #fff;
+
+  --black: #0d114f;
+  --white: #fafafa;
+  --blue: #3485ff;
+  --light-blue: #e0ecff;
+  --backgroud: #f6faff;
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
+  --black-color: #040911;
+
+  --grey-dark: #4d5e77;
+  --grey-blue: #a1b2cd;
+  --grey-ligth: #e5eaf1;
+  --text-color-menu-user: #616468;
+}
+
+.dark:root {
+  --primary-color: #212127;
+  --primary-dark-color: #26262e;
+  --primary-hover-color: #26262e;
+  --end-week-day-color: #bceb12;
+
+  --secondary-color: #34dba1;
+  --secondary-dark-color: #23976f;
+  --secondary-hover-color: #d2fff0;
+
+  --background-color: #16171a;
+
+  --primary-text-color: white;
+  --secondary-text-color: #bec1cc;
+
+  --perfil-text-color: #fff;
+
+  --button-cancel-color-hover: #37373d;
+  --button-cancel-color: #2a2a2e;
+
+  --button-color: #202635;
+  --header-color: #212127;
+
+  --toggle-switch-color: #fff;
+
+  --notification-rounded-container: #1d2d38;
+
+  --border-input-color: #33333c;
+
+  --white-color: #fff;
+  --black-color: #000;
+  --footer-text-color: #fff;
+
+  --footer-background-color: #212127;
+
+  --form-container-color: #212127;
+
+  --background-input-color: #2a2a32;
+
+  --input-text-color: #fff;
+  --input-login-text-color: #fff;
+
+  --card-text-color: #fff;
+
+  --border-table-color: #4a4a57;
+
+  --icon-search-color: #fff;
+
+  --table-head-color: #2b2d33;
+
+  --table-text-color: #fff;
+
+  --feed-color: #34dba1;
+
+  --feed-text-color: #000;
+
+  --document-img: #1a1c20;
+
+  --anchor-text-color: #3a65ff;
+
+  --anchor-text-color-hover: #2642a9;
+  --background-color-menu-user: #f9f9f9;
+  --text-color-menu-user: #616468;
+}

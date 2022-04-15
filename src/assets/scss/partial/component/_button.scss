@@ -1,0 +1,70 @@
+.btn {
+  background: transparent;
+  border-radius: 0.8rem;
+  display: inline-block;
+  padding: 1rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-default);
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.btn-info {
+  background-color: var(--button-info-color);
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--button-info-color);
+  }
+}
+
+.btn-icon {
+  background: transparent;
+  border-radius: 0.8rem;
+  display: inline-block;
+  padding: 1rem;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  border-radius: 28.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  &:hover {
+    color: var(--hover-icon-color);
+    transition: var(--transition-default);
+  }
+}
+
+.btn-cancel {
+  background-color: var(--button-cancel-color);
+  color: var(--input-text-color);
+  &:hover {
+    background-color: var(--button-cancel-color-hover);
+    color: var(--input-text-color);
+
+  }
+}
+
+.btn-send {
+  background-color: var(--button-send-color);
+  color: var(--button-info-color);
+  &:hover {
+    background-color: var(--secondary-dark-color);
+  }
+}
+
+.btn-login {
+  background-color: var(--button-send-color);
+  color: var(--white-color);
+  &:hover {
+    background-color: var(--secondary-dark-color);
+  }
+}

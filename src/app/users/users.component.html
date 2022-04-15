@@ -1,0 +1,78 @@
+<div class="section-name">
+  <h2 class="section-name-title-1">Meus Contactos</h2>
+  <h3 class="section-name-title-2"></h3>
+</div>
+
+<button class="btn btn-info" (click)="openDialog()" *ngIf="currentUser.tipo_user=='Administrador' ">
+  Adicionar
+  <span class="icon">
+    <i class="fa fa-plus-square" aria-hidden="true"></i>
+  </span>
+</button>
+<h1 class="component-name"></h1>
+<div class="table-container">
+  <div class="table-container-head">
+    <form action="#">
+      <div class="input-box">
+        <input type="text">
+        <button type="submit">
+          <i class='bx bx-search'></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <table class="table-container-content">
+    <thead>
+      <tr>        
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+        <th scope="col" *ngIf="currentUser.tipo_user=='Administrador'">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataContacto">
+        <td data-label="nome">
+          {{item.user.nome}}
+        </td>
+        <td data-label="email">
+          {{item.user.email}}
+        </td>
+        <td data-label="telefone">
+          {{item.contacto}}
+        </td>
+        <td *ngIf="currentUser.tipo_user=='Administrador'">
+          <button mat-button [matMenuTriggerFor]="menu" class="action">
+            <span class="item-icon">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </span>
+          </button>
+          <mat-menu #menu="matMenu" class="card-menu" xPosition="after">
+            <button id="editPasswordField" class="card-menu-button button" mat-menu-item
+              (click)="openAddContacto(item.user._id)">
+              <span>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>
+              </span>
+              Adicionar
+            </button>
+            <button id="editPasswordField" class="card-menu-button button" mat-menu-item
+              (click)="openEditContacto(item._id)">
+              <span>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"> </i>
+              </span>
+              Editar
+            </button>
+            <button class="card-menu-button" mat-menu-item>
+              <span>
+                <i class="fa fa-trash-o" aria-hidden="true"> </i>
+              </span>
+              Apagar
+            </button>
+          </mat-menu>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

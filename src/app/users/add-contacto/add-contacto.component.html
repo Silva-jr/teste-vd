@@ -1,0 +1,36 @@
+<div mat-dialog-content>
+
+    <h1 class="component-name">Adicionar Contacto</h1>
+    <div class="form-container">
+        <form [formGroup]="register" (ngSubmit)="addContacto()">
+            <h2 class="form-title">
+                Dados
+            </h2>
+            <div class="form-row view">
+                <div class="form-group">
+                    <label for="" class="label">User<em>*</em></label>
+                    <div class="form-controls">
+                        <input type="text" formControlName="user">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="" class="label">Telefone<em>*</em></label>
+                    <div class="form-controls">
+                        <input type="number" formControlName="contacto">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row-bottom">
+                <button type="reset" class="btn btn-cancel" (click)="onNoClick()">
+                    Cancelar
+                </button>
+                <button type="submit" class="btn btn-send">
+                    Cadastrar
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,113 @@
+.sidebar{
+  flex-basis      : var(--sidebar-width);
+  max-width       : var(--sidebar-width);
+  flex-shrink     : 0;
+  background-color: var(--primary-color);
+  display         : flex;
+  flex-direction  : column;
+  box-shadow      : 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
+  transition      : .2s;
+  overflow-x      : hidden;
+  position        : fixed;
+  transition      : var(--transition-default);
+  @include scrollBar-small;
+  height    : 100%;
+  z-index   : var(--z-index-sidebar);
+  top       : 0;
+  left      : 0;
+  width     : var(--sidebar-width);
+  overflow-x: hidden;
+
+  &.active-sidebar-responsiveness {
+    width: 0;
+  }
+
+  &-header {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    padding         : .5rem;
+    color           : white;
+    background-color: var(--primary-dark-color);
+    transition      : .2s;
+
+    .logo {
+      font-size   : 3rem;
+      padding-left: .7rem;
+    }
+  }
+
+  &-list {
+    list-style-type: none;
+    padding        : 0;
+
+    &-item {
+      position     : relative;
+      margin-bottom: .4rem;
+      transition   : var(--transition-default);
+
+      a{
+        display        : flex;
+        align-items    : center;
+        width          : 100%;
+        padding        : 10px 16px;
+        color          : var(--white-color);
+        text-decoration: none;
+        font-size      : 1.4rem;
+        line-height    : 24px;
+        transition     : var(--transition-default);
+
+        &:hover {
+          background-color: var(--primary-hover-color);
+          color           : var(--secondary-color);
+        }
+
+        span {
+          margin-right: 1rem;
+        }
+      }
+
+      &.active{
+        background-color: var(--primary-hover-color);
+        transition      : var(--transition-default);
+
+        &:before {
+          content         : '';
+          position        : absolute;
+          right           : 0;
+          background-color: var(--secondary-color);
+          height          : 100%;
+          width           : .4rem;
+          transition      : var(--transition-default);
+        }
+
+        a{
+          color: var(--secondary-color);
+        }
+      }
+
+      &:hover:not(.list-title){
+        background-color: var(--primary-hover-color);
+        transition      : var(--transition-default);
+
+        a {
+          color: var(--secondary-color);
+        }
+      }
+
+      .title{
+        display         : flex;
+        align-items     : center;
+        width           : 100%;
+        padding         : 1rem 1.6rem;
+        color           : var(--white-color);
+        text-decoration : none;
+        font-size       : 1.4rem;
+        line-height     : 2.4rem;
+        background-color: var(--primary-dark-color);
+      }
+    }
+  }
+
+
+}

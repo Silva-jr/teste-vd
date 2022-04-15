@@ -1,0 +1,330 @@
+.form-container {
+  background-color: var(--form-container-color);
+  box-shadow: 0px 0px 19px -7px rgba(0, 0, 0, 0.15);
+  border-radius: 0.8rem;
+  padding: 2rem;
+  width: 100%;
+  margin: 1rem 0;
+
+  form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 2rem 0;
+  color: var(--perfil-text-color);
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 0.8 rem 0;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.form-row-bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  // margin: .5rem 0;
+  label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1rem 0;
+    color: var(--perfil-text-color);
+
+    em {
+      font-weight: 500;
+    }
+  }
+}
+
+.form-controls {
+  width: 100%;
+  position: relative;
+  transition: var(--transition-default);
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 0%;
+    height: 0.2rem;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  &:focus-within::after {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  display: inline !important;
+  background-color: var(--background-input-color);
+  color: var(--input-login-text-color);
+  border: 0.1rem solid var(--border-input-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+[type="file"] {
+  border: 0.1rem solid var(--border-input-color);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+[type="file"]::-webkit-file-upload-button {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.2em;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  transition: 1s;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.2em;
+  background-color: var(--secondary-color);
+  color: var(--button-info-color);
+  transition: 1s;
+  cursor: pointer;
+}
+
+/*
+  input[type=file]::-webkit-file-upload-button:hover {
+    background-color: var(--secondary-hover-color);
+  }
+
+  input[type=file]::file-selector-button:hover {
+    background-color: var(--secondary-hover-color);
+  }*/
+
+[type="file"],
+[type="email"],
+[type="text"],
+[type="password"],
+select,
+textarea {
+  color: var(--input-login-text-color);
+}
+
+select {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--input-login-text-color);
+    font-size: 2rem;
+    right: 0;
+    top: 0;
+  }
+}
+
+/*************************************************************************/
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    --active: var(--secondary-color);
+    --active-inner: #fff;
+    --focus: 2px rgba(0, 111, 81, 0.3);
+    --border: #bbc1e1;
+    --border-hover: var(--secondary-color);
+    --background: #fff;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+
+    &:after {
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+        opacity var(--d-o, 0.2s);
+    }
+
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: 0.3s;
+      --d-t: 0.6s;
+      --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    }
+
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+
+      & + label {
+        cursor: not-allowed;
+      }
+    }
+
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+
+    &:not(.switch) {
+      width: 21px;
+
+      &:after {
+        opacity: var(--o, 0);
+      }
+
+      &:checked {
+        --o: 1;
+      }
+    }
+
+    & + label {
+      font-size: 14px;
+      line-height: 21px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+  }
+
+  input[type="checkbox"] {
+    &:not(.switch) {
+      border-radius: 7px;
+
+      &:after {
+        width: 5px;
+        height: 9px;
+        border: 2px solid var(--active-inner);
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        transform: rotate(var(--r, 20deg));
+      }
+
+      &:checked {
+        --r: 43deg;
+      }
+    }
+
+    &.switch {
+      width: 38px;
+      border-radius: 11px;
+
+      &:after {
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--ab, var(--border));
+        transform: translateX(var(--x, 0));
+      }
+
+      &:checked {
+        --ab: var(--active-inner);
+        --x: 17px;
+      }
+
+      &:disabled {
+        &:not(:checked) {
+          &:after {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    border-radius: 50%;
+
+    &:after {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--active-inner);
+      opacity: 0;
+      transform: scale(var(--s, 0.7));
+    }
+
+    &:checked {
+      --s: 0.5;
+    }
+  }
+}
